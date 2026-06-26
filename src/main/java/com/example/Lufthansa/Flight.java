@@ -25,11 +25,17 @@ public class Flight {
     private String origin;
     private String destination;
     private String airline;
+
+    @Column(name = "flight_number")
     private long flight_number;
+
+    @Column(name = "departure_time")
     private String departure_time;
+
+    @Column(name = "arrival_time")
     private String arrival_time;
     private String status;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "flights")
     Set<Booking> bookings;
 }
